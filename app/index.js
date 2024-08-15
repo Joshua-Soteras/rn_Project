@@ -6,6 +6,9 @@ import {
   ScrollView,
   Button,
 
+  //Worshop 3 
+  StyleSheet,
+
 } from "react-native";
 
 
@@ -18,10 +21,20 @@ https://pictogrammers.com/library/mdi/
 */
 const IdCard = props => {
   return (
-   <View>
-      <Text> Name: {props.name} </Text>
-      <Text> ID #: {props.idNum}</Text>
-      <Text> Major: {props.major}</Text>
+   <View style =  { styles.idCard}> 
+
+      <Image 
+        style = {styles.idPhoto}
+        source={require('@/assets/images/insertPhoto.png')}
+        resizeMode="contain"
+        />
+
+      <View style = {styles.idInfo}>
+        <Text> Name: {props.name} </Text>
+        <Text> ID #: {props.idNum}</Text>
+        <Text> Major: {props.major}</Text>
+      </View>
+
     </View>
   );
  }
@@ -67,7 +80,7 @@ export default function Index() {
         */}
         <Text> Example #1: Properties</Text>
         <Text> Student Registry </Text>
-        <IdCard name = "John Doe" idNum = {1} major = "Computer Science" /> 
+        <IdCard name = "John Doe" idNum = {1} major = "Computer Science" />
         <IdCard name = "Sheldon Cooper " idNum = {2} major = 'Physics' /> 
         <IdCard name = "Carl Gauss" idNum = {3}  major = "Mathematics " />
         <IdCard name = "Bruce Wayne" idNum = {3}  major = "Forensics " />
@@ -94,3 +107,44 @@ export default function Index() {
   ); //End of return 
 
 };//end of Index component  
+
+const styles = StyleSheet.create({
+  
+  //Style for the id card  (container)
+  idCard: { 
+    
+    //Box Model adjustments 
+    borderWidth: 3,
+    borderColor: '#ff0000', 
+    margin: 10,
+    padding:5,
+
+    height: 150,
+    width: 'auto',
+  
+    flexDirection: 'row',
+   
+  } , 
+
+  //Style the photo area on the ID card 
+  idPhoto: {
+    
+    borderWidth: 3, 
+    borderColor: 'blue',
+    height: 100, 
+    width: 100,
+    flex: .25
+  },
+
+  //Style
+  idInfo: {
+    flex: .75,
+    borderWidth: 3, 
+    borderColor: 'yellow',
+  }
+
+});
+
+/*
+
+*/
