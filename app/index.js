@@ -81,7 +81,7 @@ export default function Index() {
           - below demonstrates the resuability of componets through props
           - componet acts an object for UI, in this case displaying different types of id
         */}
-        <Text> Example #1: Properties{'\n'}</Text>
+        <Text> Example #1: Properties</Text>
         
         <TaskCard
           type = "Home"
@@ -90,7 +90,7 @@ export default function Index() {
           date = "03/02/23"
           time= "4:00pm "
         />
-          <Text>{'\n'}</Text>
+         
          <TaskCard
           type = "College"
           taskNumber = "2"
@@ -99,7 +99,6 @@ export default function Index() {
           time= "11:59pm "
         />
         
-        <Text>{'\n'}</Text>
          <TaskCard
           type = "Execrcise "
           taskNumber = "3"
@@ -108,7 +107,7 @@ export default function Index() {
           time= "4:20pm "
         />
 
-        <Text> {'\n'} Example 2 </Text>
+       
         
         {/*
           - EXAMPLE 2: Componenets such Image have props as well
@@ -131,14 +130,13 @@ export default function Index() {
 };//end of Index component  
 
 
-/*
-Do not worry about this until WS3 
+
 const styles = StyleSheet.create({
   
   //Style for the id card  (container)
-  idCard: { 
+  taskCard: { 
     
-    //Box Model adjustments 
+    //Box Model adjustments for taskBox
     borderWidth: 3,
     borderColor: '#ff0000', 
     margin: 10,
@@ -152,25 +150,9 @@ const styles = StyleSheet.create({
    
   } , 
 
-  //Style the photo area on the ID card 
-  idPhoto: {
-    
-    borderWidth: 3, 
-    borderColor: 'blue',
-    margin: 5, 
-     
-    height: 100, 
-    width: 100,
-    flex: .25
-  },
 
-  //Style
-  idInfo: {
-    flex: .75,
-    borderWidth: 3, 
-    borderColor: 'yellow',
-  }
+  
 
 });
 
-*/
+
