@@ -1,34 +1,52 @@
 import { useState } from "react";
 import { 
+  //WS2 Dependecies 
   Text, 
   View, 
   Image,
   ScrollView,
   Button,
+ 
+
+  //Worshop 3 
+  StyleSheet,
 
 } from "react-native";
 
 
 /*
 https://pictogrammers.com/library/mdi/
+  Workshop 2: 
   Example 1: Using Props 
-  -Basically creating an component that represents an ID
+  -Basically creating an component that represent a Task item
+  - 
   - Creating a component with props will allow reusability, similar to that of objects 
   - Note that props (properties) is the idea of resuing componets for different values
+  - Note: each component within 'TaskCar' is treated as div element (its own box)
 */
-const IdCard = props => {
+const TaskCard = props => {
   return (
-   <View>
-      <Text> Name: {props.name} </Text>
-      <Text> ID #: {props.idNum}</Text>
-      <Text> Major: {props.major}</Text>
+
+   <View style > 
+      {/* Task Type  */}
+      <Text> {props.type} </Text>
+
+     {/*Detials for the task  */}
+      <View >
+        <Text> Task #: {props.taskNumber}</Text>
+        <Text> Task Name: {props.name} </Text>
+        <Text> Due Date: {props.date}</Text>
+        <Text> Time: {props.time}</Text>
+      </View>
+
     </View>
   );
  }
 
 
  /*
-  EXAMPLE #3: useState()
+  Workshop 2 
+  EXAMPLE #3: useState() 
   - a componet that displays a button
   - when pressed, updates the UI 
   - slides will explain how this works 
@@ -49,11 +67,9 @@ const Increment = () => {
 
 
  //This is the coomponet that will output the UI on the screen 
+ // Think of this as 'main' 
 export default function Index() {
 
-  //This for Example 2 used below
-  //Download this image manually or used another
-  //You can grab the file path by clicking on image within the folder and getting file path 
   return (
 
     <ScrollView>
@@ -65,16 +81,35 @@ export default function Index() {
           - below demonstrates the resuability of componets through props
           - componet acts an object for UI, in this case displaying different types of id
         */}
-        <Text> Example #1: Properties</Text>
-        <Text> Student Registry </Text>
-        <IdCard name = "John Doe" idNum = {1} major = "Computer Science" /> 
-        <IdCard name = "Sheldon Cooper " idNum = {2} major = 'Physics' /> 
-        <IdCard name = "Carl Gauss" idNum = {3}  major = "Mathematics " />
-        <IdCard name = "Bruce Wayne" idNum = {3}  major = "Forensics " />
-        <IdCard name = "Naruto Uzamaki" idNum = {3}  major = "Art" />
-        <IdCard name = "Peter Parker" idNum = {3}  major = "Physics" />
+        <Text> Example #1: Properties{'\n'}</Text>
+        
+        <TaskCard
+          type = "Home"
+          taskNumber = "1"
+          name = "Clean Room"
+          date = "03/02/23"
+          time= "4:00pm "
+        />
+          <Text>{'\n'}</Text>
+         <TaskCard
+          type = "College"
+          taskNumber = "2"
+          name = "Finish Calculus Homework"
+          date = "03/03/23"
+          time= "11:59pm "
+        />
+        
+        <Text>{'\n'}</Text>
+         <TaskCard
+          type = "Execrcise "
+          taskNumber = "3"
+          name = "Leg Day "
+          date = "03/02/23"
+          time= "4:20pm "
+        />
 
-
+        <Text> {'\n'} Example 2 </Text>
+        
         {/*
           - EXAMPLE 2: Componenets such Image have props as well
           - For this case, "source is a prop"
@@ -84,9 +119,9 @@ export default function Index() {
 
 
        {/*
-          - EXAMPLE 3: useState()
+          - EXAMPLE 3: useState() (see above componet )
       */}
-      <Text> Example 3:</Text>
+      <Text>{'\n'} Example 3:</Text>
       <Increment/>
 
     </ScrollView>
@@ -94,3 +129,48 @@ export default function Index() {
   ); //End of return 
 
 };//end of Index component  
+
+
+/*
+Do not worry about this until WS3 
+const styles = StyleSheet.create({
+  
+  //Style for the id card  (container)
+  idCard: { 
+    
+    //Box Model adjustments 
+    borderWidth: 3,
+    borderColor: '#ff0000', 
+    margin: 10,
+    padding:5,
+    height: 150,
+    width: 'auto',
+
+    
+    //Layout Adjustments 
+    flexDirection: 'row',
+   
+  } , 
+
+  //Style the photo area on the ID card 
+  idPhoto: {
+    
+    borderWidth: 3, 
+    borderColor: 'blue',
+    margin: 5, 
+     
+    height: 100, 
+    width: 100,
+    flex: .25
+  },
+
+  //Style
+  idInfo: {
+    flex: .75,
+    borderWidth: 3, 
+    borderColor: 'yellow',
+  }
+
+});
+
+*/
