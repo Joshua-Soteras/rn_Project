@@ -10,47 +10,82 @@ import {
 
   //Worshop 3 
   StyleSheet,
+   
 
 } from "react-native";
 
 
+import Checkbox from 'expo-checkbox';
+
+
+
 /*
-https://pictogrammers.com/library/mdi/
-  Workshop 2: 
-  Example 1: Using Props 
-  -Basically creating an component that represent a Task item
-  - 
-  - Creating a component with props will allow reusability, similar to that of objects 
-  - Note that props (properties) is the idea of resuing componets for different values
-  - Note: each component within 'TaskCar' is treated as div element (its own box)
+  WS3 Adding styles
 */
 const TaskCard = props => {
+
+  
+    /*
+      State: showing and hiding details
+      - default is set to false
+      - if user clicks on button, details will be shown
+    */
+  const [showDetails , setDetails] = useState(false); 
+
+  /**
+   * Used for Check Box task compeletion 
+   */
+  const [isChecked, setChecked] = useState(false); 
+  
+  
+  
   return (
+  
+   <View style =  {styles.taskCard}> 
+      
+      {/* 
+        Task Type
+        Change Added
+        note how i used an array here to inherit the parent style (taskCard)
+      */}
+    <Text style= {styles.taskType}>{props.type}</Text> 
+    
+    <CheckBox
+          value={isChecked}
+          onValueChange={setChecked}
+          style={styles.checkBox}
+        />
 
-   <View style > 
-      {/* Task Type  */}
-      <Text> {props.type} </Text>
 
-     {/*Detials for the task  */}
+      
+      
+     {/*Details for the task  */}
       <View >
-        <Text> Task #: {props.taskNumber}</Text>
+        
         <Text> Task Name: {props.name} </Text>
-        <Text> Due Date: {props.date}</Text>
-        <Text> Time: {props.time}</Text>
+        
+        {/*Button to toggle details*/}
+        <Button 
+          title={showDetails ? "Hide Details" : "Show Details"} 
+          onPress={() => setDetails(!showDetails)}
+        /> 
+        {showDetails && (
+            <View>
+              <Text> Task #: {props.taskNumber}</Text>
+              <Text> Due Date: {props.date}</Text>
+              <Text> Time: {props.time}</Text>
+           </View>
+        )}
+     
+        
       </View>
 
-    </View>
+    </View> //taskCard view (the parent that encapsulates everything )
   );
  }
 
 
- /*
-  Workshop 2 
-  EXAMPLE #3: useState() 
-  - a componet that displays a button
-  - when pressed, updates the UI 
-  - slides will explain how this works 
-*/
+ 
 const Increment = () => {
   const [count, setCount] = useState(0); 
   return(
@@ -133,22 +168,54 @@ export default function Index() {
 
 const styles = StyleSheet.create({
   
-  //Style for the id card  (container)
+  //Style for the Taskcard  (container)
   taskCard: { 
     
+   
     //Box Model adjustments for taskBox
-    borderWidth: 3,
-    borderColor: '#ff0000', 
+    //borderColor: '#ff0000',  //Use border color to show case the border/boudaries 
+    borderWidth: 1,
+    borderRadius: 10,
     margin: 10,
-    padding:5,
     height: 150,
     width: 'auto',
 
+    //LAYOUT 
+    flexDirection: 'row', //main axis is vertical / cross axis horizontal 
     
-    //Layout Adjustments 
-    flexDirection: 'row',
+    flexWrap: 'wrap',
+    //Shadow 
+    //object: {width: number,height: number}
+    //elevation: .01
+ 
+
+  },
+  
+
+  taskType: {
+    
+    backgroundColor:  'powderblue', 
+    fontSize : 18,
+    fontWeight: 'bold',
+    width: '100%', 
+
+    //Layout 
+    flexBasis: '500', 
+    
+  
    
-  } , 
+
+    //Box Model 
+    
+
+  },
+
+  checkBox: {
+    borderWidth: 1,
+    borderRadius: 10,
+  }
+
+
 
 
   
