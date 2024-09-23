@@ -177,7 +177,6 @@ export default function Index() {
           -console.log verifyies that how flat list works 
       */}
       {/*PART 3: Using Flat-List*/}
-
       <FlatList
         
           data={sampleData}
@@ -194,7 +193,7 @@ export default function Index() {
               />
             );
           }}
-        /> 
+      /> 
       
     </View>
 
