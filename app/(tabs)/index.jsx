@@ -16,6 +16,7 @@ import {
 import styles from "./styles";
 
 import sampleData from './sampleData.json'
+import { Link , router} from "expo-router";
 
 /*
   Read Me: 
@@ -176,6 +177,7 @@ export default function Index() {
 
           -console.log verifyies that how flat list works 
       */}
+
       {/*PART 3: Using Flat-List*/}
       <FlatList
         
@@ -194,7 +196,8 @@ export default function Index() {
             );
           }}
       /> 
-      
+
+     
     </View>
 
   ); //End of return 

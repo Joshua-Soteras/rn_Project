@@ -1,0 +1,19 @@
+1. created (tabs)
+    - moved index.jsx inside (tabs)
+    - created new _layout.tsx within (tabs) 
+        - app/(tabs)/_layout.tsx
+    - created the links to other pages by using the tab layout 
+    - 
+
+    reference for options prop in tabs 
+    - https://reactnavigation.org/docs/bottom-tab-navigator/#options 
+
+2. Change some code wtihin  app/_layout.tx 
+    - Change showing the header to false 
+    - this is because the tab layout will have its own header
+
+
+3. changes (tab) layout
+    - styled the header 
+    - will style tabs 
+    - 

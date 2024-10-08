@@ -33,33 +33,32 @@ const styles = StyleSheet.create ({
         itemOne: contains the checkbox
     */
     itemOne: {
-
-        
         
         borderTopLeftRadius: 10,
         borderBottomLeftRadius:10,
         
         backgroundColor:'#f0e7d8',
+        height: '100%',
         
         //Layout: 
         flexDirecton: 'column',
         alignItems:'center',
         justifyContent: 'center',
-
-       
-        height: '100%'
-        
     
     },
 
+
+
     checkBox: {
         
+        //Box Model
         borderWidth: 1,
         borderRadius: 10,
         height: 25,
         width: 25,
         margin: 4,
        
+        //Layout 
         flexDirecton: 'column',
     
     },
@@ -68,9 +67,12 @@ const styles = StyleSheet.create ({
 
     //item:Two: contains the rest of the content of the task Card
     itemTwo:{
+
         flexDirection: 'column',
         flex: 2,
+
     }, 
+
 
 
     taskType: {
@@ -82,17 +84,20 @@ const styles = StyleSheet.create ({
         width: "100%", 
         padding: 5,
 
-        //Text Backgroun
+        //Text 
         backgroundColor:  'powderblue', 
-        fontFamily: 'MedivalSharp',
-        fontSize : 14,
-        fontWeight: 'bold',
+        fontFamily: 'KHGummi',
+        fontSize : 14
+        
     },
+
+
 
     detailsBox: {
         //Box Model
         borderWidth: 1, 
         borderColor: 'black',
+      
 
         //Layout
         //flex will define how your items are going to “fill” over the available space along your main axis. 
@@ -100,11 +105,15 @@ const styles = StyleSheet.create ({
         flex: 2,
     }, 
     
+
     textDetails: {
         fontSize: 12,
+        fontFamily: 'KHMenu'
     },
 
-  buttonDetails: {
+
+
+    buttonDetails: {
 
       borderWidth: 1,
       borderBlockColor: 'yellow',
@@ -151,5 +160,11 @@ Notes:
 
 /*
 
- Flat Lst
+  Flat List
+
+    Steps 1: 
+        - Import Flat List Componnet from react native
+            - import {FlatList} from 'react-native'
+    Step2:
+
 */
